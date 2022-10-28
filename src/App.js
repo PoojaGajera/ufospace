@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
 
+import "./App.css";
+import WomenInSpace from "./Components/women-in-space";
+//import data from "./Components/files/ufo.json";
+//import axios from "axios";
+
+// const text = () => {
+//   let finalArr = [];
+//   let store = new Set();
+//   for (var d of data) {
+//     if (d.state == "") {
+//       d.state = "NY";
+//     }
+//     if (store.has(d.state)) continue;
+
+//     store.add(d.state);
+//     console.log(store);
+//     const arrObjs = data.filter((ele) => ele.state == d.state);
+//     console.log(arrObjs);
+//     const dtArr = new Array();
+//     for (var obj of arrObjs) {
+//       dtArr.push(obj.date_time);
+//     }
+//     let newObj = new Object({ ...d, dts: dtArr });
+//     finalArr.push(newObj);
+//   }
+//   console.log(finalArr);
+// };
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <button onClick={text}>Hit me</button>  */}
+      <WomenInSpace></WomenInSpace>
     </div>
   );
 }
