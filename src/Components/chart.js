@@ -46,7 +46,7 @@ function _svg(
     .text("Year when first visible")
     .style("opacity", 0.8)
     .style("font-size", "13px")
-    .style("font-weight","bold");
+    .style("font-weight", "bold");
 
   const axisDuration = d3
     .axisLeft()
@@ -69,7 +69,7 @@ function _svg(
     .text("Duration first time (Seconds)")
     .style("opacity", 0.8)
     .style("font-size", "13px")
-    .style("font-weight","bold");
+    .style("font-weight", "bold");
 
   chart.append("g").attr("class", "guideline-group");
 
@@ -203,12 +203,14 @@ function _createTooltip(margin) {
     tooltip
       .append("text")
       .attr("id", "state")
-      .attr("x", margin + 15)
+      .attr("x", margin - 30)
       .attr("y", 30)
       .style("fill", "white")
-      .style("font-size", "13px")
+      .style("font-size", "13.5px")
       .style("font-weight", "bold")
-      .text("Click on each point for more info: ");
+      .text(
+        "Click on each point for more info: Each color circle represent a paricular state. Each ring represents the number of times ufo was visible after the first apperance. For eg(CA-orange has 5 rings i.e 5 apperances of UFO.)"
+      );
 
     // tooltip
     //   .append("text")
