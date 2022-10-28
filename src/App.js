@@ -1,6 +1,6 @@
 import "./App.css";
 import WomenInSpace from "./Components/women-in-space";
-import data from "./Components/files/ufo.json";
+//import data from "./Components/files/ufo.json";
 
 // const text = () => {
 //   let finalArr = [];
