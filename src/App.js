@@ -1,8 +1,6 @@
-
 import "./App.css";
 import WomenInSpace from "./Components/women-in-space";
-//import data from "./Components/files/ufo.json";
-//import axios from "axios";
+import data from "./Components/files/ufo.json";
 
 // const text = () => {
 //   let finalArr = [];
@@ -16,7 +14,7 @@ import WomenInSpace from "./Components/women-in-space";
 //     store.add(d.state);
 //     console.log(store);
 //     const arrObjs = data.filter((ele) => ele.state == d.state);
-//     console.log(arrObjs);
+//  //   console.log(arrObjs);
 //     const dtArr = new Array();
 //     for (var obj of arrObjs) {
 //       dtArr.push(obj.date_time);
@@ -28,8 +26,8 @@ import WomenInSpace from "./Components/women-in-space";
 // };
 function App() {
   return (
-    <div className="App">
-      {/* <button onClick={text}>Hit me</button>  */}
+    <div className='App'>
+      {/* <button onClick={text}>Hit me</button> */}
       <WomenInSpace></WomenInSpace>
     </div>
   );

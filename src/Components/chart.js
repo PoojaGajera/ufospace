@@ -1,5 +1,5 @@
 import myData from "./files/ufo.json";
-import background from "./files/background.jpeg";
+import background1 from "./files/background2.jpg";
 
 function _svg(
   d3,
@@ -45,7 +45,8 @@ function _svg(
     .attr("y", height - 10)
     .text("Year when first visible")
     .style("opacity", 0.8)
-    .style("font-size", "12px");
+    .style("font-size", "13px")
+    .style("font-weight","bold");
 
   const axisDuration = d3
     .axisLeft()
@@ -67,7 +68,8 @@ function _svg(
     .attr("transform", `translate(20,${height / 2 + 100}) rotate(270)`)
     .text("Duration first time (Seconds)")
     .style("opacity", 0.8)
-    .style("font-size", "12px");
+    .style("font-size", "13px")
+    .style("font-weight","bold");
 
   chart.append("g").attr("class", "guideline-group");
 
@@ -174,6 +176,7 @@ function _getDescription() {
     } else {
       desc += `time.</strong>`;
     }
+
     if (years.length > 1) {
       desc += `</br>Years: <strong>${years.join(", ")}.</strong></br></br>`;
     } else {
@@ -205,7 +208,17 @@ function _createTooltip(margin) {
       .style("fill", "white")
       .style("font-size", "13px")
       .style("font-weight", "bold")
-      .text("Click on each point for more info");
+      .text("Click on each point for more info: ");
+
+    // tooltip
+    //   .append("text")
+    //   .attr("id", "state")
+    //   .attr("x", margin + 15)
+    //   .attr("y", 50)
+    //   .style("fill", "white")
+    //   .style("font-size", "13px")
+    //   .style("font-weight", "bold")
+    //   .text("bdksjbkj");
 
     tooltip
       .append("foreignObject")
@@ -223,7 +236,7 @@ function _createTooltip(margin) {
 
 function _getColor(stateColors) {
   return function getColor(d) {
-    console.log(d.state);
+    // console.log(d.state);
     if (stateColors[d.state]) {
       return stateColors[d.state];
     }
@@ -262,6 +275,7 @@ function _countryColors() {
     CA: "rgba(255, 118, 77, 1)",
     AZ: "rgba(240, 198, 46, 1)",
     MD: "rgba(46, 198, 240, 1)",
+    AR: "rgba(234,67,52,1)",
     Other: "rgba(168, 168, 168, 1)",
   };
 }
@@ -315,7 +329,7 @@ function _list(parsedData) {
     } else {
       elem.durationFirstYear = 20;
     }
-    console.log("list: ", elem);
+    // console.log("list: ", elem);
     return elem;
   });
 }
@@ -379,7 +393,7 @@ export default function define(runtime, observer) {
     [
       "background@1.jpeg",
       {
-        url: background,
+        url: background1,
         mimeType: "imduration/jpeg",
         toString,
       },
