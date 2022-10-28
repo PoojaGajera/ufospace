@@ -348,7 +348,7 @@ function _styles(html, backgroundUrl) {
     .axis line,
     .axis path {
       stroke: white;
-      stroke-width: 1px;
+      stroke-width: 1px; 
     }
 
     text {
@@ -378,7 +378,7 @@ export default function define(runtime, observer) {
     [
       "background@1.jpeg",
       {
-        url: "/files/6a3b675caea2a19f42a7a02c50b964c5a54d5f3472bd5482a9692cba84cb3e3a793314d1d8c50bf1a347642e756d6a8f33f313d722a25091beeb901bac5ec8bf.jpeg",
+        url: "ufospace/files/background.jpeg",
         mimeType: "imduration/jpeg",
         toString,
       },
@@ -386,7 +386,7 @@ export default function define(runtime, observer) {
     [
       "symbol@1.png",
       {
-        url: "/files/79800714cc7b84d58bbdba4b0f83dbe5f2e6dd1baf60afc47604296a3d14b36931516071528c03eff1f8caa773f33a369583f76d80a1b8ad09a2a7403c2247cd.png",
+        url: "./files/circle.png",
         mimeType: "imduration/png",
         toString,
       },
