@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ufospace/static/css/main.048f56bc.css",
-    "main.js": "/ufospace/static/js/main.e1b1c876.js",
+    "main.js": "/ufospace/static/js/main.62b778b6.js",
     "static/js/787.ed83a1ae.chunk.js": "/ufospace/static/js/787.ed83a1ae.chunk.js",
     "index.html": "/ufospace/index.html",
     "main.048f56bc.css.map": "/ufospace/static/css/main.048f56bc.css.map",
-    "main.e1b1c876.js.map": "/ufospace/static/js/main.e1b1c876.js.map",
+    "main.62b778b6.js.map": "/ufospace/static/js/main.62b778b6.js.map",
     "787.ed83a1ae.chunk.js.map": "/ufospace/static/js/787.ed83a1ae.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.048f56bc.css",
-    "static/js/main.e1b1c876.js"
+    "static/js/main.62b778b6.js"
   ]
 }
