@@ -1,4 +1,5 @@
 import myData from "./files/ufo.json";
+import background from "./files/background.jpeg";
 
 function _svg(
   d3,
@@ -348,7 +349,7 @@ function _styles(html, backgroundUrl) {
     .axis line,
     .axis path {
       stroke: white;
-      stroke-width: 1px; 
+      stroke-width: 1px;
     }
 
     text {
@@ -378,7 +379,7 @@ export default function define(runtime, observer) {
     [
       "background@1.jpeg",
       {
-        url: "ufospace/files/background.jpeg",
+        url: background,
         mimeType: "imduration/jpeg",
         toString,
       },
