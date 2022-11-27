@@ -1,6 +1,6 @@
 import myData from "./files/ufo.json";
-import background1 from "./files/background2.jpg";
-
+//import background1 from "./files/background2.jpg";
+import background1 from "./files/ufored.png";
 function _svg(
   d3,
   width,
@@ -47,7 +47,7 @@ function _svg(
     .style("opacity", 0.8)
     .style("font-size", "13px")
     .style("font-weight", "bold");
-
+  //Remove this for just timeline
   const axisDuration = d3
     .axisLeft()
     .scale(scaleDuration)
@@ -70,7 +70,7 @@ function _svg(
     .style("opacity", 0.8)
     .style("font-size", "13px")
     .style("font-weight", "bold");
-
+  //Till here
   chart.append("g").attr("class", "guideline-group");
 
   const entry = chart.selectAll(null).data(list).join("g");
@@ -99,7 +99,7 @@ function _svg(
     .style("stroke", function (d) {
       return getColor(d3.select(this.parentNode).datum());
     })
-    .style("stroke-width", 0.5)
+    .style("stroke-width", 0.9)
     .style("fill", "none");
 
   const tooltip = chart.append("g");
@@ -128,7 +128,8 @@ function _svg(
         .text(`${point.state} - ${point.country}`)
         .style("font-size", "15px");
       tooltip.select("#description").html(getDescription(point));
-      addGuideline("horizontal", point);
+      //Remove this for just timeline
+     addGuideline("horizontal", point);
       addGuideline("vertical", point);
     }
     lastPoint = point;
@@ -155,8 +156,8 @@ function _addGuideline(margin, scaleTime, scaleDuration, height, d3) {
       .attr("y1", y1)
       .attr("x2", x2)
       .attr("y2", y2)
-      .style("stroke-dasharray", "2, 2")
-      .style("stroke", "rgba(255, 255, 255, 0.3)");
+      .style("stroke-dasharray", "3, 3")
+      .style("stroke", "rgba(255, 255, 255, 0.7)");
   };
 }
 
@@ -187,8 +188,8 @@ function _getDescription() {
     /****************************/
     // if you want to add a limit to description length, uncomment the below lines
     /****************************/
-    // let limit = 300;
-    // if (text.length > limit) text = text.substring(0, limit) + " ...";
+    let limit = 300;
+    if (text.length > limit) text = text.substring(0, limit) + " ...";
     desc += text;
 
     return desc;
@@ -209,7 +210,7 @@ function _createTooltip(margin) {
       .style("font-size", "13.5px")
       .style("font-weight", "bold")
       .text(
-        "Click on each point for more info: Each color circle represent a paricular state. Each ring represents the number of times ufo was visible after the first apperance. For eg(CA-orange has 5 rings i.e 5 apperances of UFO.)"
+        "Check out all the countries I visited"
       );
 
     // tooltip
@@ -236,11 +237,20 @@ function _createTooltip(margin) {
   };
 }
 
+// function _getColor(stateColors) {
+//   return function getColor(d) {
+//     // console.log(d.state);
+//     if (stateColors[d.state]) {
+//       return stateColors[d.state];
+//     }
+//     return stateColors["Other"];
+//   };
+//}
 function _getColor(stateColors) {
   return function getColor(d) {
     // console.log(d.state);
-    if (stateColors[d.state]) {
-      return stateColors[d.state];
+    if (stateColors[d.country]) {
+      return stateColors[d.country];
     }
     return stateColors["Other"];
   };
@@ -270,14 +280,58 @@ function _quadtree(d3, scaleTime, scaleDuration, list) {
 
 function _countryColors() {
   return {
-    NY: "rgba(61, 190, 255, 1)",
-    TX: "rgba(255, 156, 181, 1)",
-    WX: "rgba(255, 156, 181, 1)",
-    FL: "rgba(130, 240, 46, 1)",
-    CA: "rgba(255, 118, 77, 1)",
-    AZ: "rgba(240, 198, 46, 1)",
-    MD: "rgba(46, 198, 240, 1)",
-    AR: "rgba(234,67,52,1)",
+    // NY: "rgb(142, 202, 230)",
+    // TX: "rgb(251, 133, 0)",
+    // MD: "rgb(255, 183, 3)",
+    // FL: "rgb(255, 200, 221)",
+    // WI: "rgb(230, 57, 70)",
+    // CA: "rgb(241, 250, 238)",
+    // AZ: "rgb(204, 213, 174)",
+    // PA: "rgb(254, 250, 224)",
+    // AL: "rgb(254, 250, 224)",
+    // AR: "rgb(250, 237, 205)",
+    // MI: "rgb(212, 163, 115)",
+    // Perth: "rgb(255, 255, 255)",
+    // BC: "rgb(239, 71, 111)",
+    // NJ: "rgb(6, 214, 160)",
+    // GA: "rgb(251, 86, 7)",
+    // LA: "rgb(255, 0, 110)",
+    // "Sao Paulo": "rgb(131, 56, 236)",
+    // HI: "rgb(58, 134, 255)",
+    // MS: "rgb(237, 237, 233)",
+    // OK: "rgb(214, 204, 194)",
+    // IN: "rgb(245, 235, 224)",
+    // IL: "rgb(213, 189, 175)",
+    // WA: "rgb(255, 243, 176)",
+    // "Welwyn Garden City": "rgb(158, 42, 43)",
+    // VA: "rgb(58, 134, 255)",
+    // MS: "rgb(237, 237, 233)",
+    // OK: "rgb(214, 204, 194)",
+    // IN: "rgb(245, 235, 224)",
+    // IL: "rgb(213, 189, 175)",
+    // WA: "rgb(255, 243, 176)",
+    USA: "rgb(142, 202, 230)",
+    Australia: "rgb(251, 133, 0)",
+    "United Kingdom": "rgb(255, 183, 3)",
+    India: "rgb(255, 200, 221)",
+    "South Africa": "rgb(230, 57, 70)",
+    Canada: "rgb(241, 250, 238)",
+    Germany: "rgb(58, 134, 255)",
+    Ireland: "rgb(237, 237, 233)",
+    "Northern Ireland": "rgb(214, 204, 194)",
+    "Sri Lanka": "rgb(245, 235, 224)",
+    Brazil: "rgb(213, 189, 175)",
+    Bahrain: "rgb(255, 243, 176)",
+    Philippines: "rgb(58, 134, 255)",
+    Kosovo: "rgb(237, 237, 233)",
+    Mexico: "rgb(247, 127, 0)",
+    "South Korea": "rgb(247, 37, 133)",
+    Venezuela: "rgb(76, 201, 240)",
+    Lebanon: "rgb(255, 243, 176)",
+    "New Zealand": "rgb(158, 42, 43)",
+    "Hong Kong SAR": "rgb(208, 244, 222)",
+    Denmark: "rgb(228, 193, 249)",
+    Singapore: "rgb(181, 23, 158)",
     Other: "rgba(168, 168, 168, 1)",
   };
 }
@@ -354,7 +408,7 @@ function _backgroundUrl(FileAttachment) {
 
 function _styles(html, backgroundUrl) {
   return html`<style>
-    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap");
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
     .star-background {
       background: url("${backgroundUrl}");
@@ -364,14 +418,14 @@ function _styles(html, backgroundUrl) {
 
     .axis line,
     .axis path {
-      stroke: white;
-      stroke-width: 1px;
+      stroke: green;
+      stroke-width: 2px;
     }
 
     text {
       fill: white;
       font-size: 1.2em;
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Orbitron', sans-serif;
     }
 
     .profile {
@@ -381,7 +435,7 @@ function _styles(html, backgroundUrl) {
       padding: 0 10px 10px 0;
     }
     div {
-      font-family: "Open Sans", sans-serif;
+      font-family: 'Orbitron', sans-serif;
     }
   </style>`;
 }

@@ -1,12 +1,12 @@
 import "./App.css";
-import WomenInSpace from "./Components/women-in-space";
-//import data from "./Components/files/ufo.json";
+import UfoInSpace from "./Components/ufo-in-space";
+// import data from "./Components/files/data.json";
 
 // const text = () => {
 //   let finalArr = [];
 //   let store = new Set();
 //   for (var d of data) {
-//     if (d.state == "") {
+//     if (d.state === "") {
 //       d.state = "NY";
 //     }
 //     if (store.has(d.state)) continue;
@@ -24,11 +24,12 @@ import WomenInSpace from "./Components/women-in-space";
 //   }
 //   console.log(finalArr);
 // };
+
 function App() {
   return (
     <div className='App'>
-      {/* <button onClick={text}>Hit me</button> */}
-      <WomenInSpace></WomenInSpace>
+      {/* { <button onClick={text}>Hit me</button> } */}
+      <UfoInSpace></UfoInSpace>
     </div>
   );
 }
