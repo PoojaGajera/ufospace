@@ -2,6 +2,8 @@ import "./App.css";
 import UfoInSpace from "./Components/ufo-in-space";
 // import data from "./Components/files/data.json";
 
+//Code to filter the dataset into a minimized dataset
+
 // const text = () => {
 //   let finalArr = [];
 //   let store = new Set();
