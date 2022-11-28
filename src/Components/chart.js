@@ -1,6 +1,7 @@
 import myData from "./files/ufo.json";
 //import background1 from "./files/background2.jpg";
 import background1 from "./files/ufored.png";
+
 function _svg(
   d3,
   width,
@@ -244,13 +245,14 @@ function _createTooltip(margin) {
 //     return stateColors["Other"];
 //   };
 //}
-function _getColor(stateColors) {
+
+function _getColor(countryColors) {
   return function getColor(d) {
     // console.log(d.state);
-    if (stateColors[d.country]) {
-      return stateColors[d.country];
+    if (countryColors[d.country]) {
+      return countryColors[d.country];
     }
-    return stateColors["Other"];
+    return countryColors["Other"];
   };
 }
 
@@ -309,28 +311,28 @@ function _countryColors() {
     // IL: "rgb(213, 189, 175)",
     // WA: "rgb(255, 243, 176)",
     USA: "rgb(142, 202, 230)",
-    Australia: "rgb(251, 133, 0)",
+    Australia: "rgb(94, 96, 206)",
     "United Kingdom": "rgb(255, 183, 3)",
-    India: "rgb(255, 200, 221)",
+    India: "rgb(242, 100, 25)",
     "South Africa": "rgb(230, 57, 70)",
-    Canada: "rgb(241, 250, 238)",
-    Germany: "rgb(58, 134, 255)",
-    Ireland: "rgb(237, 237, 233)",
-    "Northern Ireland": "rgb(214, 204, 194)",
-    "Sri Lanka": "rgb(245, 235, 224)",
+    Canada: "rgb(2, 48, 71)",
+    Germany: "rgb(112, 224, 0)",
+    Ireland: "rgb(188, 108, 37)",
+    "Northern Ireland": "rgb(114, 9, 183)",
+    "Sri Lanka": "rgb(217, 4, 41)",
     Brazil: "rgb(213, 189, 175)",
     Bahrain: "rgb(255, 243, 176)",
     Philippines: "rgb(58, 134, 255)",
-    Kosovo: "rgb(237, 237, 233)",
+    Kosovo: "rgb(114, 239, 221)",
     Mexico: "rgb(247, 127, 0)",
     "South Korea": "rgb(247, 37, 133)",
     Venezuela: "rgb(76, 201, 240)",
     Lebanon: "rgb(255, 243, 176)",
     "New Zealand": "rgb(158, 42, 43)",
-    "Hong Kong SAR": "rgb(208, 244, 222)",
+    "Hong Kong SAR": "rgb(159, 134, 192)",
     Denmark: "rgb(228, 193, 249)",
     Singapore: "rgb(181, 23, 158)",
-    Other: "rgba(168, 168, 168, 1)",
+    Other: "rgba(241, 91, 181)",
   };
 }
 
