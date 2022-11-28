@@ -157,7 +157,7 @@ function _addGuideline(margin, scaleTime, scaleDuration, height, d3) {
       .attr("x2", x2)
       .attr("y2", y2)
       .style("stroke-dasharray", "3, 3")
-      .style("stroke", "rgba(255, 255, 255, 0.7)");
+      .style("stroke", "rgba(0, 0, 0, 1)");
   };
 }
 
@@ -409,7 +409,7 @@ function _styles(html, backgroundUrl) {
     @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 
     .star-background {
-     // background: url("${backgroundUrl}");
+      // background: url("${backgroundUrl}");
       background-repeat: no-repeat;
       background-size: cover;
       backgroundcolor: "rgba(255,0,0,0.5)";
