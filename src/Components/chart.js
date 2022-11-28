@@ -129,7 +129,7 @@ function _svg(
         .style("font-size", "15px");
       tooltip.select("#description").html(getDescription(point));
       //Remove this for just timeline
-     addGuideline("horizontal", point);
+      addGuideline("horizontal", point);
       addGuideline("vertical", point);
     }
     lastPoint = point;
@@ -206,12 +206,10 @@ function _createTooltip(margin) {
       .attr("id", "state")
       .attr("x", margin - 30)
       .attr("y", 30)
-      .style("fill", "white")
+      .style("fill", "black")
       .style("font-size", "13.5px")
       .style("font-weight", "bold")
-      .text(
-        "Check out all the countries I visited"
-      );
+      .text("Check out all the countries I visited");
 
     // tooltip
     //   .append("text")
@@ -233,7 +231,7 @@ function _createTooltip(margin) {
       .attr("xmlns", "http://www.w3.org/1999/xhtml")
       .attr("id", "description")
       .style("font-size", "12px")
-      .style("color", "white");
+      .style("color", "black");
   };
 }
 
@@ -408,12 +406,14 @@ function _backgroundUrl(FileAttachment) {
 
 function _styles(html, backgroundUrl) {
   return html`<style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
 
     .star-background {
-      background: url("${backgroundUrl}");
+     // background: url("${backgroundUrl}");
       background-repeat: no-repeat;
       background-size: cover;
+      backgroundcolor: "rgba(255,0,0,0.5)";
+      //opacity: 0;
     }
 
     .axis line,
@@ -423,9 +423,9 @@ function _styles(html, backgroundUrl) {
     }
 
     text {
-      fill: white;
+      fill: black;
       font-size: 1.2em;
-      font-family: 'Orbitron', sans-serif;
+      font-family: "Orbitron", sans-serif;
     }
 
     .profile {
@@ -435,7 +435,7 @@ function _styles(html, backgroundUrl) {
       padding: 0 10px 10px 0;
     }
     div {
-      font-family: 'Orbitron', sans-serif;
+      font-family: "Orbitron", sans-serif;
     }
   </style>`;
 }
